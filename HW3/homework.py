@@ -368,7 +368,7 @@ def LoadInput(aInputFile):
             folObj = parser.parse(f.readline().strip())
             folObj = ConvertToCNF(folObj)
             #print DumpS(folObj)            
-            clauses.extend(FactorMultipleClauses(ExtractClausesFromCNF(folObj)))
+            clauses.extend(ExtractClausesFromCNF(folObj))
         for c in clauses:
             if not IsTautology(c):
                 kb.append(c)
