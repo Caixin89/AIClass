@@ -42,7 +42,6 @@ private:
 				//if unoccupied:
 				if (board[i][j] == '.')
 				{
-					string move = "";
 					string moveType = "";
 					char otherSymbol = GetOppositeSymbol(aMySymbol);
 					//if adjacent to a friendly tile and adjacent to 
@@ -56,7 +55,6 @@ private:
 							(i > 0 && board[i - 1][j] == otherSymbol) ||
 							(i < dimension - 1 && board[i + 1][j] == otherSymbol))
 						{
-							move = GetTilePosInStr(j, i);
 							moveType = "Raid";
 							actions.push_back(tuple<BYTE, BYTE, string>(j, i, moveType));
 						}
@@ -69,7 +67,6 @@ private:
 				//if unoccupied:
 				if (board[i][j] == '.')
 				{
-					string move = GetTilePosInStr(j, i);
 					string moveType = "Stake";
 					actions.push_back(tuple<BYTE, BYTE, string>(j, i, moveType));
 				}
